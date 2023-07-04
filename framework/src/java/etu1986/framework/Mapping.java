@@ -4,14 +4,23 @@
  */
 package etu1986.framework;
 
+import java.lang.reflect.Method;
+
 /**
  *
  * @author hardy
  */
 public class Mapping {
     String className;
-    String method;
+    String methodname;
+    Method method;
 
+    public Mapping(String className,Method method) {
+        this.className = className;
+        this.methodname = methodname;
+        this.method = method;
+    }
+    
     public String getClassName() {
         return className;
     }
@@ -21,11 +30,18 @@ public class Mapping {
     }
 
     public String getMethod() {
-        return method;
+        return methodname;
     }
 
-    public void setMethod(String method) {
-        this.method = method;
+    public void setMethod(String methodname) {
+        this.methodname = methodname;
     }
-    
+
+    public Mapping(String className, String methodname) {
+        this.className = className;
+        this.methodname = methodname;
+    }
+    public Mapping(){
+        
+    }
 }
